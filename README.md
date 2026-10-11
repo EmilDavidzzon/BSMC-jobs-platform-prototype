@@ -3,7 +3,24 @@
 First prototype of the **International Student Jobs Platform**, a BSMC Venture
 Studio project (Milan, autumn 2026).
 
-> Status: repository set up. The clickable HTML prototype will be added here.
+> Status: clickable front-end prototype. All jobs, companies and people in it
+> are sample data; nothing is stored and there is no backend.
+
+## The prototype
+
+[`index.html`](index.html) is a single self-contained file (styles, script and
+images inline; fonts from Google Fonts). Download it and open it in any browser.
+
+It walks through every screen of the MVP:
+
+- **Home**: categories, how it works, latest opportunities
+- **Browse jobs**: filters (category, area, schedule, language, pay) and a
+  "recommended for you" list
+- **Job detail**: role description and the external "how to apply" step
+- **Student sign-up**: university email verification, profile, privacy consent
+- **Company view**: post an opportunity and manage listings
+- **Admin**: review queue, reported listings, latest feedback
+- **About / team**: motives, principles, team
 
 ## Semester goal
 
