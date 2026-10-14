@@ -1,7 +1,7 @@
 # Venture Studio 1st prototype
 
-First prototype of the **International Student Jobs Platform**, a BSMC Venture
-Studio project (Milan, autumn 2026).
+First prototype of the **International Student Jobs Platform**, a student-run
+project (Milan, autumn 2026).
 
 > Status: clickable front-end prototype ("Project A"). All jobs, companies and
 > numbers in it are simulated; nothing is stored and there is no backend.
@@ -301,4 +301,4 @@ operating model.
 ---
 
 Source: *International Student Jobs Platform, project brief, October 2026*
-(BSMC Venture Studio, internal working document).
+(internal working document).
