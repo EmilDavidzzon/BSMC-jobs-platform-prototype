@@ -119,13 +119,13 @@ Pages are switched with the URL hash, so every screen has a shareable link:
   state and "Back to browsing".
 - **Job cards** show the company initial, title, a verified-employer shield,
   category, duration, area, a "Basic Italian" tag where Italian is needed, pay
-  and schedule.
+  and schedule. Jobs posted today get a gold "New" tag.
 
 ### 3. Job detail (`#job`)
 
 A sample listing: **Weekend barista at Nebbia Coffee Bar**.
 
-- Tags (Part-time, English only), a verified-employer badge, and the key facts:
+- Tags (a gold "New", Part-time, English only), a verified-employer badge, and the key facts:
   pay €11/h, Sat & Sun 8:00–14:00, Porta Venezia, starting in November.
 - Sections: About the role, What you'll do, Good to know. "Good to know" says
   that the contract and pay are agreed directly with the employer.
