@@ -22,6 +22,28 @@ All companies, jobs, applicant numbers, profiles and map locations are
 **simulated**. Nothing is saved, nothing is sent anywhere, and no personal data
 is collected.
 
+### Colour palette
+
+Cool greys with two accents. About 90% of every screen is grey and white, so
+the accents stand out.
+
+| Colour | Hex | Used for |
+| --- | --- | --- |
+| Orchid | `#A67CBA` | Primary buttons and verified badges only. Always dark text on it, never white. |
+| Gold | `#FFD700` | One highlight per screen: "New", pending (e.g. "In review", the admin queue count) and the logo dot. Never as text on white. |
+| Graphite | `#1D1B2E` | Text, top bar, footer, dark panels |
+| Slate | `#5F6478` | Secondary info, captions, map lines and charts |
+| Mist | `#DCDDE8` | Borders, dividers |
+| Cloud | `#F6F6FA` | Page sections, tags |
+| White | `#FFFFFF` | Main background |
+| Error | `#B42318` | Form errors only |
+
+Links are graphite text with an orchid underline, because orchid text on white
+is too faint to read. The colours are CSS variables at the top of `index.html`
+(`--graphite`, `--slate`, `--mist`, `--cloud`, `--orchid`, `--gold`,
+`--error`). One extra shade, `--field: #A2A5B7`, is used for form input
+borders, because mist is too faint for a field outline.
+
 ### Navigation
 
 A "Prototype" bar at the top of every page jumps straight to any screen.
@@ -222,7 +244,8 @@ All the content lives in the `<script>` at the bottom of `index.html`:
 | Admin review queue | `queue` |
 | Team members | `TEAM` |
 
-Colours and fonts are CSS variables in `:root` at the top of the file. The map
+Colours (see [Colour palette](#colour-palette)) and fonts are CSS variables in
+`:root` at the top of the file. The map
 is a large inline SVG (around 430 KB) inside `#map-stage`, which makes up most
 of the file size.
 
