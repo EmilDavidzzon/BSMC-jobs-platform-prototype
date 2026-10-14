@@ -22,12 +22,6 @@ All companies, jobs, applicant numbers, profiles and map locations are
 **simulated**. Nothing is saved, nothing is sent anywhere, and no personal data
 is collected.
 
-### Placeholders
-
-The university name and logo have been removed for now. The name appears as
-`[University]` and the logo as a grey "LOGO" box (an inline SVG). To brand it,
-search `index.html` for `[University]` and replace the `uni-logo` image source.
-
 ### Navigation
 
 A "Prototype" bar at the top of every page jumps straight to any screen.
@@ -48,11 +42,11 @@ Pages are switched with the URL hash, so every screen has a shareable link:
 
 - **Hero**: "Internships and part-time work in Milan — in English", with
   "Create your student profile" and "I'm hiring — post a job" buttons and three
-  promises: verified with your [University] email, always free for students, apply
-  directly to employers.
+  promises: verified student profiles, always free for students, and apply directly
+  to employers.
 - **Interactive map of Milan** (inline SVG):
-  - 17 company pins covering 20 on-site and hybrid roles, plus a
-    campus marker. The 4 remote roles are linked separately.
+  - 17 company pins covering 20 on-site and hybrid roles. The 4 remote
+    roles are linked separately.
   - Each pin shows the company initial, the number of people applying and a
     mini bar chart of applications over the last 7 days.
   - Hovering over or focusing a pin opens a tooltip listing each open role
@@ -123,8 +117,8 @@ A sample listing: **Weekend barista at Nebbia Coffee Bar**.
 A three-step progress bar (Verify student email → Build your profile → Start
 browsing), shown at step 2.
 
-1. **University email**: shows a verified university address. Only [University] student
-   addresses can join, confirmed with a 6-digit code, and the university email
+1. **Student email**: shows a verified student address. Only verified student
+   addresses can join, confirmed with a 6-digit code, and the student email
    is never shown to employers.
 2. **About you**: full name, contact email shown to employers, programme, year
    of study (1st to 3rd year, Master's, Exchange student), languages with level
@@ -168,21 +162,21 @@ Shown as the sample employer **Nebbia Coffee Bar**.
 - A **review queue** that works: Approve or Reject removes the item and updates
   the counts, with an "All caught up" state when it's empty. It holds sample
   items of each kind: a listing, a company registration, and a student who
-  signed up with a non-university email and needs a manual check.
+  signed up with an unrecognised student email and needs a manual check.
 - **Reported listings** (for example "Pay unclear" or "Italian required") and
   **latest feedback** from students and employers.
 
 ### 7. About and team (`#about`)
 
 - **Mission**: making the job market in Milan more accessible for
-  English-speaking international university students.
+  English-speaking international students.
 - **Our motives**: the language barrier, scattered opportunities, small
   businesses that can't reach students, and learning by building.
 - **Four principles**: Student-first, Trust-based, Discovery only and
   Non-profit.
 - A **prototype disclaimer**: everything is simulated, nothing is connected,
-  no personal data is collected, and the project is not an official service
-  of [University].
+  no personal data is collected, and Project A is an independent student
+  initiative.
 - **Meet the team**: member cards with initials avatars and a member count.
 
 ### Sample data

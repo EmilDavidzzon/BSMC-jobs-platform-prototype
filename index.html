@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>[University] Strategy Venture Studio Project A — Blueprint</title>
+<title>Project A — Blueprint</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap">
@@ -168,11 +168,11 @@ input[type=checkbox],input[type=radio]{accent-color:var(--green);width:18px;heig
 .map-viewport{position:relative;height:460px;border-radius:16px;overflow:hidden;background:#E9EFF6;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none}
 .map-viewport.dragging{cursor:grabbing}
 .map-stage{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
-.map-stage .map-uni img{width:18px;height:18px;max-width:none;pointer-events:none}
+
 .map-pins{position:absolute;inset:0;pointer-events:none}
 .map-pin{position:absolute;transform:translate(-50%,-50%);pointer-events:auto;display:flex;align-items:center;gap:5px;padding:3px 8px 3px 3px;background:#fff;border:0;border-radius:999px;box-shadow:0 2px 10px rgba(0,0,0,.5);font:inherit;color:var(--ink);cursor:pointer;white-space:nowrap;transition:transform .12s}
 .map-pin:hover,.map-pin:focus-visible{transform:translate(-50%,-50%) scale(1.12);z-index:3;outline:2px solid var(--accent);outline-offset:2px}
-.map-uni{position:absolute;transform:translate(-50%,-50%);padding:4px 10px;border-radius:999px;background:var(--green);color:#fff;font-weight:700;font-size:12px;white-space:nowrap;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+
 .map-controls{position:absolute;top:12px;right:12px;display:flex;flex-direction:column;gap:6px;z-index:4}
 .map-controls button{width:40px;height:40px;border-radius:10px;border:0;background:#fff;color:var(--ink);font:inherit;font-size:20px;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.4);display:inline-flex;align-items:center;justify-content:center}
 .map-controls button:hover{background:var(--ground)}
@@ -180,11 +180,11 @@ input[type=checkbox],input[type=radio]{accent-color:var(--green);width:18px;heig
 .map-tipbox{position:absolute;z-index:30;width:270px;background:#fff;color:var(--ink);border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.45);display:none;pointer-events:none}
 
 /* blue theme + logo + vector map */
-.uni-logo{margin-left:14px;border-radius:6px;flex:none}
+
 .map-stage svg{display:block;width:1200px;height:660px}
 .map-pin{border:1px solid #CBD6E6;box-shadow:0 3px 10px rgba(12,27,51,.22)}
-.map-uni{display:inline-flex;align-items:center;gap:6px;background:var(--accent);padding:3px 10px 3px 3px}
-.map-uni img{border-radius:50%;display:block}
+
+
 .pin-bars i{background:var(--accent)}
 
 /* ===== v6: realistic map, motion & polish ===== */
@@ -195,12 +195,12 @@ input[type=checkbox],input[type=radio]{accent-color:var(--green);width:18px;heig
 .map-viewport{background:#E5EDF7;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
 .map-pin{transform:translate(-50%,-50%) scale(var(--inv,1));transition:scale .18s ease, box-shadow .18s ease;box-shadow:0 4px 12px rgba(12,27,51,.2)}
 .map-pin:hover,.map-pin:focus-visible{transform:translate(-50%,-50%) scale(var(--inv,1));scale:1.12;box-shadow:0 10px 22px rgba(12,27,51,.28);outline:2px solid var(--accent);outline-offset:2px}
-.map-stage.animate .map-pin,.map-stage.animate .map-uni{transition:transform .38s cubic-bezier(.2,.7,.2,1), scale .18s ease}
+.map-stage.animate .map-pin{transition:transform .38s cubic-bezier(.2,.7,.2,1), scale .18s ease}
 .map-pin.pop{animation:pinPop .55s cubic-bezier(.2,.9,.25,1.25) both}
 @keyframes pinPop{from{opacity:0;scale:.3}to{opacity:1;scale:1}}
-.map-uni{transform:translate(-50%,-50%) scale(var(--inv,1));z-index:2}
-.map-uni::after{content:'';position:absolute;inset:-5px;border-radius:999px;border:2px solid var(--accent);opacity:0;animation:uniPulse 2.6s ease-out infinite}
-@keyframes uniPulse{0%{opacity:.6;scale:.9}100%{opacity:0;scale:1.35}}
+
+
+
 .map-tipbox{display:block;opacity:0;visibility:hidden;translate:0 6px;transition:opacity .18s ease, translate .18s ease, visibility 0s .18s}
 .map-tipbox.show{opacity:1;visibility:visible;translate:0 0;transition:opacity .18s ease, translate .18s ease}
 .map-hint.gone{opacity:0}
@@ -366,7 +366,7 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
 <!-- ============ HOME ============ -->
 <div class="page" id="page-home">
   <header class="site-header"><div class="wrap">
-    <a class="logo" href="#home"><span class="logo-mark" aria-hidden="true">A</span><span class="col" style="line-height:1.1">Project A<small style="font-family:var(--body);font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0">[University] Strategy Venture Studio</small></span><img class="uni-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect x='.5' y='.5' width='35' height='35' rx='6' fill='%23E8EEF5' stroke='%2397A3B6' stroke-dasharray='3 2'/%3E%3Ctext x='18' y='21.5' text-anchor='middle' font-family='sans-serif' font-size='9' font-weight='700' fill='%234B5A6E'%3ELOGO%3C/text%3E%3C/svg%3E" alt="University logo (placeholder)" width="36" height="36"></a>
+    <a class="logo" href="#home"><span class="logo-mark" aria-hidden="true">A</span><span class="col" style="line-height:1.1">Project A<small style="font-family:var(--body);font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0">Student jobs in Milan</small></span></a>
     <nav class="nav" aria-label="Main">
       <a class="link" href="#jobs">Browse jobs</a>
       <a class="link" href="#company">For companies</a>
@@ -379,15 +379,15 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
   <main>
     <section class="wrap hero" style="padding-top:72px;padding-bottom:72px;display:flex;flex-wrap:wrap;align-items:center;gap:56px">
       <div class="col" style="flex:1 1 480px;min-width:0;gap:26px">
-        <span class="eyebrow" style="display:inline-flex;align-items:center;gap:8px"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect x='.5' y='.5' width='35' height='35' rx='6' fill='%23E8EEF5' stroke='%2397A3B6' stroke-dasharray='3 2'/%3E%3Ctext x='18' y='21.5' text-anchor='middle' font-family='sans-serif' font-size='9' font-weight='700' fill='%234B5A6E'%3ELOGO%3C/text%3E%3C/svg%3E" alt="" width="20" height="20" style="border-radius:4px">For English-speaking [University] students</span>
+        <span class="eyebrow" style="display:inline-flex;align-items:center;gap:8px">For English-speaking students in Milan</span>
         <h1 style="font-weight:800;font-size:clamp(2.6rem,5.2vw,4.4rem);line-height:1.02;letter-spacing:-0.025em">Internships and part-time work in Milan — in English.</h1>
-        <p class="muted" style="font-size:1.2rem;line-height:1.6;max-width:34rem">A small, focused network connecting [University] students with Milan businesses. Build a verified profile, discover small internships and part-time roles, and contact companies directly.</p>
+        <p class="muted" style="font-size:1.2rem;line-height:1.6;max-width:34rem">A small, focused network connecting international students with Milan businesses. Build a verified profile, discover small internships and part-time roles, and contact companies directly.</p>
         <div class="row" style="gap:12px">
           <a class="btn btn-primary" href="#signup">Create your student profile <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
           <a class="btn btn-outline" href="#company">I'm hiring — post a job</a>
         </div>
         <ul class="check-list">
-          <li><svg width="18" height="18" style="color:var(--green)"><use href="#i-check"/></svg>Verified with your [University] email</li>
+          <li><svg width="18" height="18" style="color:var(--green)"><use href="#i-check"/></svg>Verified student profiles</li>
           <li><svg width="18" height="18" style="color:var(--green)"><use href="#i-check"/></svg>Always free for students</li>
           <li><svg width="18" height="18" style="color:var(--green)"><use href="#i-check"/></svg>Apply directly to employers</li>
         </ul>
@@ -429,9 +429,9 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
       </div>
     </section>
 
-    <section aria-label="Universities" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)">
+    <section aria-label="Who it is for" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)">
       <div class="wrap muted" style="padding-top:22px;padding-bottom:22px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 32px;font-size:15px">
-        <span style="font-weight:600;color:var(--ink)">Built for the [University] community</span>
+        <span style="font-weight:600;color:var(--ink)">Built for students in Milan</span>
         <span>Bachelor's, Master's and exchange students</span><span>·</span><span>Small internships</span><span>·</span><span>Part-time roles</span><span>·</span><span>Milan businesses and startups</span>
       </div>
     </section>
@@ -460,7 +460,7 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
         <div class="card col" style="flex:1 1 460px;min-width:0;gap:24px">
           <span class="chip chip-orange" style="align-self:flex-start;font-size:14px;border-radius:999px;padding:6px 12px">For students</span>
           <ol class="steps">
-            <li><span class="step-num" style="background:var(--ink)">1</span><span class="col" style="gap:4px"><strong style="font-size:17px">Verify you're a student</strong><span class="muted">Sign up with your [University] student email and confirm it with a one-time code.</span></span></li>
+            <li><span class="step-num" style="background:var(--ink)">1</span><span class="col" style="gap:4px"><strong style="font-size:17px">Verify you're a student</strong><span class="muted">Sign up with your student email and confirm it with a one-time code.</span></span></li>
             <li><span class="step-num" style="background:var(--ink)">2</span><span class="col" style="gap:4px"><strong style="font-size:17px">Build your profile</strong><span class="muted">Languages, availability, skills and an optional CV — set up in a few minutes.</span></span></li>
             <li><span class="step-num" style="background:var(--ink)">3</span><span class="col" style="gap:4px"><strong style="font-size:17px">Browse and reach out</strong><span class="muted">Filter English-friendly roles and apply on the employer's own site or by email.</span></span></li>
           </ol>
@@ -508,7 +508,7 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
         <div class="col" style="gap:14px;flex:1 1 420px;min-width:0">
           <span class="proto-badge" style="align-self:flex-start"><span class="dot" aria-hidden="true"></span>Prototype</span>
           <h2 style="font-size:clamp(1.8rem,3.2vw,2.6rem)">About this project</h2>
-          <p class="muted" style="font-size:1.08rem;line-height:1.65">Project A is a <strong style="color:var(--ink)">[University] BSMC Venture Studio</strong> project. We want to help English-speaking students find flexible work in Milan, and help small businesses find motivated students, without the language barrier.</p>
+          <p class="muted" style="font-size:1.08rem;line-height:1.65">Project A is a <strong style="color:var(--ink)">student-run</strong> project. We want to help English-speaking students find flexible work in Milan, and help small businesses find motivated students, without the language barrier.</p>
           <p class="muted" style="font-size:1.08rem;line-height:1.65">This site is a <strong style="color:var(--ink)">prototype</strong>. All listings, companies and numbers are simulated to show how the product could work.</p>
           <a class="btn btn-outline btn-sm" href="#about" style="align-self:flex-start;margin-top:4px">Our motives &amp; team <svg width="16" height="16"><use href="#i-arrow"/></svg></a>
         </div>
@@ -537,7 +537,7 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
   <footer class="site-footer"><div class="wrap">
     <div class="col" style="gap:6px">
       <span style="font-family:var(--display);font-weight:700;font-size:20px;color:#fff">Project A</span>
-      <span style="display:flex;align-items:center;gap:10px"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect x='.5' y='.5' width='35' height='35' rx='6' fill='%23E8EEF5' stroke='%2397A3B6' stroke-dasharray='3 2'/%3E%3Ctext x='18' y='21.5' text-anchor='middle' font-family='sans-serif' font-size='9' font-weight='700' fill='%234B5A6E'%3ELOGO%3C/text%3E%3C/svg%3E" alt="University logo (placeholder)" width="28" height="28" style="border-radius:5px">A non-profit project by [University] Strategy Venture Studio, Milan.</span>
+      <span style="display:flex;align-items:center;gap:10px">A non-profit, student-run project in Milan.</span>
     </div>
     <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center">
       <a href="#home">Privacy notice</a><a href="#home">Terms of use</a><a href="#home">Give feedback</a><a href="#home">Contact</a>
@@ -548,7 +548,7 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
 <!-- ============ BROWSE JOBS ============ -->
 <div class="page" id="page-jobs">
   <header class="site-header"><div class="wrap">
-    <a class="logo" href="#home"><span class="logo-mark" aria-hidden="true">A</span><span class="col" style="line-height:1.1">Project A<small style="font-family:var(--body);font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0">[University] Strategy Venture Studio</small></span><img class="uni-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect x='.5' y='.5' width='35' height='35' rx='6' fill='%23E8EEF5' stroke='%2397A3B6' stroke-dasharray='3 2'/%3E%3Ctext x='18' y='21.5' text-anchor='middle' font-family='sans-serif' font-size='9' font-weight='700' fill='%234B5A6E'%3ELOGO%3C/text%3E%3C/svg%3E" alt="University logo (placeholder)" width="36" height="36"></a>
+    <a class="logo" href="#home"><span class="logo-mark" aria-hidden="true">A</span><span class="col" style="line-height:1.1">Project A<small style="font-family:var(--body);font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0">Student jobs in Milan</small></span></a>
     <nav class="nav" aria-label="Main">
       <a class="link current" href="#jobs" aria-current="page">Browse jobs</a>
       <a class="link" href="#company">For companies</a>
@@ -668,7 +668,7 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
 <!-- ============ JOB DETAIL ============ -->
 <div class="page" id="page-job">
   <header class="site-header"><div class="wrap">
-    <a class="logo" href="#home"><span class="logo-mark" aria-hidden="true">A</span><span class="col" style="line-height:1.1">Project A<small style="font-family:var(--body);font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0">[University] Strategy Venture Studio</small></span><img class="uni-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect x='.5' y='.5' width='35' height='35' rx='6' fill='%23E8EEF5' stroke='%2397A3B6' stroke-dasharray='3 2'/%3E%3Ctext x='18' y='21.5' text-anchor='middle' font-family='sans-serif' font-size='9' font-weight='700' fill='%234B5A6E'%3ELOGO%3C/text%3E%3C/svg%3E" alt="University logo (placeholder)" width="36" height="36"></a>
+    <a class="logo" href="#home"><span class="logo-mark" aria-hidden="true">A</span><span class="col" style="line-height:1.1">Project A<small style="font-family:var(--body);font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0">Student jobs in Milan</small></span></a>
     <nav class="nav" aria-label="Main">
       <a class="link current" href="#jobs">Browse jobs</a>
       <a class="link" href="#company">For companies</a>
@@ -727,7 +727,7 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
 <!-- ============ STUDENT SIGN-UP ============ -->
 <div class="page" id="page-signup">
   <header class="site-header"><div class="wrap">
-    <a class="logo" href="#home"><span class="logo-mark" aria-hidden="true">A</span><span class="col" style="line-height:1.1">Project A<small style="font-family:var(--body);font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0">[University] Strategy Venture Studio</small></span><img class="uni-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect x='.5' y='.5' width='35' height='35' rx='6' fill='%23E8EEF5' stroke='%2397A3B6' stroke-dasharray='3 2'/%3E%3Ctext x='18' y='21.5' text-anchor='middle' font-family='sans-serif' font-size='9' font-weight='700' fill='%234B5A6E'%3ELOGO%3C/text%3E%3C/svg%3E" alt="University logo (placeholder)" width="36" height="36"></a>
+    <a class="logo" href="#home"><span class="logo-mark" aria-hidden="true">A</span><span class="col" style="line-height:1.1">Project A<small style="font-family:var(--body);font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0">Student jobs in Milan</small></span></a>
     <span class="muted" style="font-size:15px">Already have an account? <a href="#signup" style="font-weight:600;padding:10px 0">Sign in</a></span>
   </div></header>
 
@@ -746,13 +746,13 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
     <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start">
       <form class="col" style="flex:999 1 560px;min-width:0;gap:24px" onsubmit="return false">
         <section class="card col" style="gap:14px">
-          <h2 style="font-size:22px">1. University email</h2>
+          <h2 style="font-size:22px">1. Student email</h2>
           <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;background:var(--green-soft);color:var(--green)">
             <svg width="20" height="20"><use href="#i-shield"/></svg>
-            <span style="flex:1 1 220px"><strong>a.kim@students.university.edu</strong> verified — [University] student email</span>
+            <span style="flex:1 1 220px"><strong>a.kim@student.example.com</strong> verified student email</span>
             <a href="#signup" style="padding:8px 0;font-weight:600">Change</a>
           </div>
-          <p class="muted" style="font-size:14px">Only [University] student addresses can join. We send a 6-digit code to confirm yours. Your university email is never shown to employers.</p>
+          <p class="muted" style="font-size:14px">Only verified student addresses can join. We send a 6-digit code to confirm yours. Your student email is never shown to employers.</p>
         </section>
 
         <section class="card col" style="gap:20px">
@@ -820,7 +820,7 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
 <!-- ============ COMPANY ============ -->
 <div class="page" id="page-company">
   <header class="site-header"><div class="wrap">
-    <a class="logo" href="#home"><span class="logo-mark" aria-hidden="true">A</span><span class="col" style="line-height:1.1">Project A<small style="font-family:var(--body);font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0">[University] Strategy Venture Studio</small></span><img class="uni-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect x='.5' y='.5' width='35' height='35' rx='6' fill='%23E8EEF5' stroke='%2397A3B6' stroke-dasharray='3 2'/%3E%3Ctext x='18' y='21.5' text-anchor='middle' font-family='sans-serif' font-size='9' font-weight='700' fill='%234B5A6E'%3ELOGO%3C/text%3E%3C/svg%3E" alt="University logo (placeholder)" width="36" height="36"><span class="chip chip-green" style="font-family:var(--body);margin-left:4px">for companies</span></a>
+    <a class="logo" href="#home"><span class="logo-mark" aria-hidden="true">A</span><span class="col" style="line-height:1.1">Project A<small style="font-family:var(--body);font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0">Student jobs in Milan</small></span><span class="chip chip-green" style="font-family:var(--body);margin-left:4px">for companies</span></a>
     <nav class="nav" aria-label="Company">
       <a class="link current" href="#company" aria-current="page">Dashboard</a>
       <a class="link" href="#jobs">See public board</a>
@@ -960,7 +960,7 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
         </section>
         <section class="card col" style="flex:1 1 360px;min-width:0;padding:24px;gap:12px">
           <h2 style="font-size:20px">Latest feedback</h2>
-          <p style="padding:12px 0;border-bottom:1px solid var(--line-soft)">"Would love a filter for roles near my campus." <span class="muted" style="font-size:14px">— student</span></p>
+          <p style="padding:12px 0;border-bottom:1px solid var(--line-soft)">"Would love a filter for roles near where I live." <span class="muted" style="font-size:14px">— student</span></p>
           <p style="padding:12px 0">"Posting took five minutes, easy." <span class="muted" style="font-size:14px">— employer</span></p>
         </section>
       </div>
@@ -971,7 +971,7 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
 <!-- ============ ABOUT ============ -->
 <div class="page" id="page-about">
   <header class="site-header"><div class="wrap">
-    <a class="logo" href="#home"><span class="logo-mark" aria-hidden="true">A</span><span class="col" style="line-height:1.1">Project A<small style="font-family:var(--body);font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0">[University] Strategy Venture Studio</small></span><img class="uni-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect x='.5' y='.5' width='35' height='35' rx='6' fill='%23E8EEF5' stroke='%2397A3B6' stroke-dasharray='3 2'/%3E%3Ctext x='18' y='21.5' text-anchor='middle' font-family='sans-serif' font-size='9' font-weight='700' fill='%234B5A6E'%3ELOGO%3C/text%3E%3C/svg%3E" alt="University logo (placeholder)" width="36" height="36"></a>
+    <a class="logo" href="#home"><span class="logo-mark" aria-hidden="true">A</span><span class="col" style="line-height:1.1">Project A<small style="font-family:var(--body);font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0">Student jobs in Milan</small></span></a>
     <nav class="nav" aria-label="Main">
       <a class="link" href="#jobs">Browse jobs</a>
       <a class="link" href="#company">For companies</a>
@@ -984,8 +984,8 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
     <section class="about-hero">
       <div class="wrap col" style="gap:22px;padding-top:88px;padding-bottom:88px">
         <span class="proto-badge"><span class="dot" aria-hidden="true"></span>Prototype · not a live service</span>
-        <h1 class="about-title">Making the job market in Milan more accessible for English-speaking international university students.</h1>
-        <p class="about-lead">Project A is being designed by a team at [University]'s BSMC Venture Studio. It explores how a small, trusted platform could connect international [University] students with Milan businesses looking for flexible, English-speaking help.</p>
+        <h1 class="about-title">Making the job market in Milan more accessible for English-speaking international students.</h1>
+        <p class="about-lead">Project A is being designed by a team of students. It explores how a small, trusted platform could connect international students with Milan businesses looking for flexible, English-speaking help.</p>
       </div>
     </section>
 
@@ -1013,7 +1013,7 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
         <article class="motive">
           <span class="motive-num">04</span>
           <h3>Learning by building</h3>
-          <p>As a BSMC Venture Studio project, this is also how we practise strategy: validating a real problem, designing a solution and testing it with users.</p>
+          <p>As a student project, this is also how we practise strategy: validating a real problem, designing a solution and testing it with users.</p>
         </article>
       </div>
     </section>
@@ -1026,7 +1026,7 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
         </div>
         <ul class="principle-list">
           <li><strong>Student-first</strong><span>Free for students and built around lecture timetables and exam seasons.</span></li>
-          <li><strong>Trust-based</strong><span>Verified [University] students and employers reviewed by the team.</span></li>
+          <li><strong>Trust-based</strong><span>Verified students and employers reviewed by the team.</span></li>
           <li><strong>Discovery only</strong><span>We connect people. Applications, contracts and pay stay between student and employer.</span></li>
           <li><strong>Non-profit</strong><span>Usefulness comes first. No fees and no paid placements.</span></li>
         </ul>
@@ -1039,7 +1039,7 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
         <div class="col" style="gap:8px">
           <h2 style="font-size:22px">This website is a prototype</h2>
           <p>It's a design blueprint to show how the product could look and work. Every company, job, applicant number, profile and map location is <strong>simulated</strong>. Sign-ups, applications and verification aren't connected to anything yet, and no personal data is collected.</p>
-          <p class="muted" style="font-size:14px">Project A is a student initiative and is not an official service of [University].</p>
+          <p class="muted" style="font-size:14px">Project A is an independent student initiative.</p>
         </div>
       </div>
     </section>
@@ -1049,7 +1049,7 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
         <div class="col" style="gap:12px;max-width:640px">
           <span class="kicker">The people behind it</span>
           <h2 class="section-title">Meet the team</h2>
-          <p class="muted" style="font-size:1.1rem">[University] students from around the world, working together at BSMC Venture Studio.</p>
+          <p class="muted" style="font-size:1.1rem">Students from around the world, working together on Project A.</p>
         </div>
         <span class="chip chip-green" style="font-size:14px;padding:7px 12px" id="team-count"></span>
       </div>
@@ -1061,7 +1061,7 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
   <footer class="site-footer"><div class="wrap">
     <div class="col" style="gap:6px">
       <span style="font-family:var(--display);font-weight:700;font-size:20px;color:#fff">Project A</span>
-      <span>A prototype by [University] Strategy Venture Studio, Milan.</span>
+      <span>A student-run prototype from Milan.</span>
     </div>
     <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center">
       <a href="#home">Home</a><a href="#jobs">Browse jobs</a><a href="#about">Our team</a>
@@ -1090,7 +1090,7 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
     { id: 'p4', initial: 'N', tint: '#E6E2F3', title: 'Social media content week', company: 'Nebbia Coffee Bar', cat: 'project', area: 'Porta Venezia', mode: 'Hybrid', when: ['Flexible'], lang: 'en', pay: '€250/project', rate: 12.5, duration: '1 week', posted: 3, match: 74 },
     { id: 'p5', initial: 'O', tint: '#E3EFFA', title: 'Competitor analysis for expansion', company: 'Ortica Studio', cat: 'project', area: 'Remote', mode: 'Remote', when: ['Flexible'], lang: 'en', pay: '€500/project', rate: 25, duration: '1 week', posted: 1, match: 93 },
     { id: 'i1', initial: 'P', tint: '#E2EAF6', title: 'Marketing intern', company: 'Porta Studio', cat: 'internship', area: 'Isola', mode: 'Hybrid', when: ['Weekdays'], lang: 'en', pay: '€800/mo', rate: 10, duration: '3 months', posted: 5, match: 80 },
-    { id: 'i2', initial: 'F', tint: '#E3EFFA', title: 'Finance analyst intern', company: 'Fintra — fintech startup', cat: 'internship', area: 'Near campus', mode: 'On-site', when: ['Weekdays'], lang: 'en', pay: '€1,000/mo', rate: 12.5, duration: '6 months', posted: 5, match: 89 },
+    { id: 'i2', initial: 'F', tint: '#E3EFFA', title: 'Finance analyst intern', company: 'Fintra — fintech startup', cat: 'internship', area: 'Porta Romana', mode: 'On-site', when: ['Weekdays'], lang: 'en', pay: '€1,000/mo', rate: 12.5, duration: '6 months', posted: 5, match: 89 },
     { id: 'i3', initial: 'T', tint: '#FBEBC8', title: 'Social media intern', company: 'Tavola — food-tech startup', cat: 'internship', area: 'Isola', mode: 'Hybrid', when: ['Flexible'], lang: 'en', pay: '€600/mo', rate: 9.5, duration: '3 months', posted: 2, match: 77 },
     { id: 'i4', initial: 'B', tint: '#E6E2F3', title: 'Venture analyst intern', company: 'Brick Ventures', cat: 'internship', area: 'Porta Nuova', mode: 'Hybrid', when: ['Weekdays'], lang: 'en', pay: '€1,200/mo', rate: 15, duration: '4 months', posted: 8, match: 87 },
     { id: 'w1', initial: 'N', tint: '#E2EAF6', title: 'Weekend barista', company: 'Nebbia Coffee Bar', cat: 'parttime', area: 'Porta Venezia', mode: 'On-site', when: ['Weekends'], lang: 'en', pay: '€11/h', rate: 11, duration: 'Ongoing', posted: 0, match: 79 },
@@ -1161,7 +1161,6 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
     var wrap = document.getElementById('map-wrap');
     var hint = document.getElementById('map-hint');
     var SIZE = 808, OFF = 17, CENTER = [500, 480];
-    var LOGO = (document.querySelector('.uni-logo') || {}).src || '';
 
     // Simulated applicant counts per listing
     var APPL = { d1: 34, d2: 12, d3: 27, d4: 9, d5: 18, t1: 22, t2: 41, t3: 15, t4: 38, t5: 11, p1: 29, p2: 24, p3: 8, p4: 16, p5: 47, i1: 52, i2: 63, i3: 31, i4: 58, w1: 19, w2: 14, w3: 10, w4: 7, w5: 6 };
@@ -1174,7 +1173,6 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
       'Ortica Studio': [770, 540], 'Sakura Navigli': [210, 640], 'Navigli Bike Tours': [330, 690],
       'Peak Prep Milano': [640, 640], 'Fintra — fintech startup': [560, 760]
     };
-    var CAMPUS = [486, 718];
     var maxAppl = Math.max.apply(null, Object.keys(APPL).map(function (k) { return APPL[k]; }));
     var BASE = new Date(2026, 9, 10);
     var fmtDate = function (d) { var dt = new Date(BASE.getTime()); dt.setDate(dt.getDate() - d); return dt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }); };
@@ -1196,11 +1194,6 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
 
     function place(el, pt) { el.style.left = (pt[0] - OFF) + 'px'; el.style.top = (pt[1] - OFF) + 'px'; }
 
-    var uni = document.createElement('div');
-    uni.className = 'map-uni';
-    uni.innerHTML = (LOGO ? '<img src="' + LOGO + '" alt="" width="18" height="18">' : '') + 'Campus';
-    place(uni, CAMPUS);
-    layer.appendChild(uni);
 
     var pinEls = [];
     Object.keys(groups).forEach(function (name, idx) {
@@ -1448,7 +1441,7 @@ body.scrolled .site-header{box-shadow:0 6px 24px -12px rgba(12,27,51,.25)}
   var queue = [
     { kind: 'Listing', title: 'Latte art workshop helper', detail: 'Nebbia Coffee Bar · One-off gig · submitted yesterday' },
     { kind: 'Company', title: 'Porta Studio', detail: 'Design agency · Isola · registered 2 days ago' },
-    { kind: 'Student', title: 'Non-university email used', detail: 'Exchange student · home-university address · needs manual check' },
+    { kind: 'Student', title: 'Unrecognised student email', detail: 'Exchange student · email domain not on the list · needs manual check' },
     { kind: 'Listing', title: 'Tour guide — Duomo rooftops', detail: 'Navigli Bike Tours · Gig · submitted today' }
   ];
   function renderQueue() {
