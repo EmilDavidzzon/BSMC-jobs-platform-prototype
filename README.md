@@ -41,8 +41,8 @@ the accents stand out.
 Links are graphite text with an orchid underline, because orchid text on white
 is too faint to read. The colours are CSS variables at the top of `index.html`
 (`--graphite`, `--slate`, `--mist`, `--cloud`, `--orchid`, `--gold`,
-`--error`). One extra shade, `--field: #A2A5B7`, is used for form input
-borders, because mist is too faint for a field outline.
+`--error`). No other colours are used anywhere, including the map: form
+inputs use slate borders, and shadows are graphite with transparency.
 
 ### Navigation
 
