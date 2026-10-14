@@ -3,13 +3,13 @@
 First prototype of the **International Student Jobs Platform**, a student-run
 project (Milan, autumn 2026).
 
-> Status: clickable front-end prototype ("Project A"). All jobs, companies and
+> Status: clickable front-end prototype ("Gigomy"). All jobs, companies and
 > numbers in it are simulated; nothing is stored and there is no backend.
 
 ## The prototype
 
 [`index.html`](index.html) is a clickable front-end blueprint of the platform,
-branded **Project A**. It is one self-contained file: plain HTML, CSS and
+branded **Gigomy**. It is one self-contained file: plain HTML, CSS and
 JavaScript, with no frameworks, no build step and no backend. Everything is
 inline except two Google Fonts (Bricolage Grotesque and Instrument Sans).
 
@@ -131,7 +131,7 @@ A sample listing: **Weekend barista at Nebbia Coffee Bar**.
   that the contract and pay are agreed directly with the employer.
 - **How to apply** panel: "Apply on employer's site", "Email the employer" and
   "Save for later". Applications go to the employer, not through the platform.
-- An employer card ("Employer reviewed by the Project A team") linking to the
+- An employer card ("Employer reviewed by the Gigomy team") linking to the
   company profile, and a **Report this listing** link.
 
 ### 4. Student sign-up (`#signup`)
@@ -197,7 +197,7 @@ Shown as the sample employer **Nebbia Coffee Bar**.
 - **Four principles**: Student-first, Trust-based, Discovery only and
   Non-profit.
 - A **prototype disclaimer**: everything is simulated, nothing is connected,
-  no personal data is collected, and Project A is an independent student
+  no personal data is collected, and Gigomy is an independent student
   initiative.
 - **Meet the team**: member cards with initials avatars and a member count.
 
