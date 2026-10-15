@@ -245,6 +245,8 @@ legend{padding:0;margin-bottom:var(--s2);font-size:14px;font-weight:600}
 .map-tip li{padding-top:var(--s2)}
 .map-tip li span{display:block;color:var(--muted)}
 .map-wrap{position:relative}
+.map-foot{margin-top:var(--s3);font-size:14px}
+.map-foot a{display:inline-flex;align-items:center;gap:6px}
 
 /* ---- Jobs ---- */
 .jobs-head{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3) var(--s4);margin-top:var(--s5)}
@@ -351,6 +353,7 @@ legend{padding:0;margin-bottom:var(--s2);font-size:14px;font-weight:600}
 .co-head h1{font-size:24px;font-weight:700;display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2) var(--s3)}
 .co-head h1 .verified{font-size:14px;font-weight:500}
 .co-head p{margin-top:var(--s2);color:var(--muted);max-width:65ch}
+.co-head .co-desc{color:var(--ink)}
 .co-block{margin-top:var(--s7)}
 .co-block > h2{margin-bottom:var(--s4)}
 .post-form{max-width:640px}
@@ -515,6 +518,7 @@ legend{padding:0;margin-bottom:var(--s2);font-size:14px;font-weight:600}
         <p class="map-hint" id="map-hint">Drag to move. Click the map, then scroll to zoom.</p>
       </div>
       <div class="map-tip" id="map-tip" role="tooltip"></div>
+      <p class="map-foot"><a href="https://www.google.com/maps/place/Milan,+Metropolitan+City+of+Milan,+Italy" target="_blank" rel="noopener">Open Milan in Google Maps <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg></a></p>
     </div>
     <div>
       <div class="newest-head">
@@ -764,6 +768,7 @@ legend{padding:0;margin-bottom:var(--s2);font-size:14px;font-weight:600}
       <div>
         <h1>Nebbia Coffee Bar <span class="verified"><svg class="icon" aria-hidden="true"><use href="#i-verified"/></svg>Reviewed employer</span></h1>
         <p>Food and hospitality, Porta Venezia, Milan. nebbia-example.it</p>
+        <p class="co-desc">Specialty coffee bar with a mostly international crowd. We hire students for weekend shifts and train everyone from scratch.</p>
       </div>
       <a class="btn btn-secondary" href="#company">Edit profile</a>
     </div>
@@ -911,7 +916,7 @@ legend{padding:0;margin-bottom:var(--s2);font-size:14px;font-weight:600}
   <div class="wrap">
     <div class="brand"><a class="wordmark" href="#home">Gigomy</a><span class="muted">A non-profit student project in Milan</span></div>
     <nav aria-label="Footer">
-      <a href="#about">About</a><a href="#home">Privacy notice</a><a href="#home">Terms</a><a href="#home">Contact</a>
+      <a href="#about">About</a><a href="#home">Privacy notice</a><a href="#home">Terms</a><a href="#home">Give feedback</a><a href="#home">Contact</a>
     </nav>
   </div>
 </footer>
@@ -1177,7 +1182,7 @@ legend{padding:0;margin-bottom:var(--s2);font-size:14px;font-weight:600}
       btn.textContent = jobs.length;
       btn.setAttribute('aria-label', name + ', ' + plural(jobs.length, 'open role', 'open roles') + '. Show in the role list.');
       var html = '<strong>' + esc(name) + '</strong><span class="tip-area">' + esc(jobs[0].area) + '</span><ul>' +
-        jobs.map(function (j) { return '<li>' + esc(j.title) + '<span>' + esc(j.pay) + ', ' + esc(j.when.join(', ')) + '</span></li>'; }).join('') + '</ul>';
+        jobs.map(function (j) { return '<li>' + esc(j.title) + '<span>' + esc(j.pay) + ', ' + esc(j.when.join(', ')) + '</span><span>Posted ' + postedLabel(j.posted).toLowerCase() + '</span></li>'; }).join('') + '</ul>';
       var show = function () { showTip(html, btn); }, hide = function () { hideTip(btn); };
       btn.addEventListener('mouseenter', show); btn.addEventListener('focus', show);
       btn.addEventListener('mouseleave', hide); btn.addEventListener('blur', hide);

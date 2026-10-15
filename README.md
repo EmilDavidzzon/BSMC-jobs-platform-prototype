@@ -96,11 +96,11 @@ its own link:
   applied. Under it: "Hiring? Post a role".
 - **Map and newest roles side by side.** The map of Milan has 17 company pins
   (20 on-site and hybrid roles). Each pin shows how many roles that company
-  has open. Hovering over or focusing a pin lists the roles with pay and
-  schedule, and clicking it opens the role list for that company. You can
+  has open. Hovering over or focusing a pin lists the roles with pay, schedule
+  and when they were posted, and clicking it opens the role list for that company. You can
   drag to pan, use the + / − / reset buttons, double-click to zoom, or click
-  the map and then scroll. Next to it: the six newest roles and "See all 24
-  roles".
+  the map and then scroll. Below the map: "Open Milan in Google Maps". Next
+  to it: the six newest roles and "See all 24 roles".
 - **How it works**: three short steps for students and three for employers.
 - **About the project**: one paragraph (student-run, non-profit, free,
   launching 18 December) with a link to About.
@@ -153,7 +153,8 @@ A sample role: **Weekend barista at Nebbia Coffee Bar**.
 
 ### 5. Employer dashboard (`#company`)
 
-Shown as the sample employer **Nebbia Coffee Bar** (reviewed employer).
+Shown as the sample employer **Nebbia Coffee Bar** (reviewed employer), with
+its sector, area, website and a short description.
 
 - **Your listings**: a table with type, status (Live, In review, Draft) and
   last update.
@@ -202,7 +203,8 @@ removing language tags, the admin queue and "Submit for review".
 **Mock-up only:** every role opens the same barista page; apply, email, save,
 report, sign in, CV upload, add language, save draft, preview and edit do
 nothing; sign-up fields aren't saved and verification is shown as done; admin
-sections other than Overview have no content; footer links go back to Home.
+sections other than Overview have no content; footer links (privacy notice,
+terms, give feedback, contact) go back to Home.
 
 ### Editing the prototype
 
