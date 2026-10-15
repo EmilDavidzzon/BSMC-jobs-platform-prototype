@@ -3,24 +3,50 @@
 First prototype of the **International Student Jobs Platform**, a student-run
 project (Milan, autumn 2026).
 
-> Status: clickable front-end prototype ("Gigomy"). All jobs, companies and
+> Status: clickable front-end prototype ("Gigomy"). All roles, companies and
 > numbers in it are simulated; nothing is stored and there is no backend.
 
 ## The prototype
 
-[`index.html`](index.html) is a clickable front-end blueprint of the platform,
+[`index.html`](index.html) is a clickable front-end prototype of the platform,
 branded **Gigomy**. It is one self-contained file: plain HTML, CSS and
 JavaScript, with no frameworks, no build step and no backend. Everything is
-inline except two Google Fonts (Bricolage Grotesque and Instrument Sans).
+inline except one Google Font (Schibsted Grotesk).
 
 **How to open it**
 
 - Online, via GitHub Pages: https://emildavidzzon.github.io/bsmc-jobs-platform-prototype/
 - Locally: download `index.html` and open it in any browser.
 
-All companies, jobs, applicant numbers, profiles and map locations are
-**simulated**. Nothing is saved, nothing is sent anywhere, and no personal data
-is collected.
+All companies, roles, profiles and map locations are **simulated**. Nothing is
+saved, nothing is sent anywhere, and no personal data is collected. The site
+says this once, in the dark prototype bar at the top of every page.
+
+### Design approach
+
+The design follows a written redesign brief and the
+[Impeccable](https://github.com/pbakaus/impeccable) anti-pattern checks
+(`npx impeccable detect index.html` reports 0 findings). In short:
+
+- **Each screen is judged by its job.** Home persuades (understand the offer
+  and search in five seconds). Jobs, role detail, sign-up, the employer
+  dashboard and admin are tools (familiar controls, dense lists, no
+  decoration). About is for reading (comfortable line length).
+- **No template furniture.** No eyebrow labels, uppercase kickers, icon-tile
+  grids, cards inside cards, gradients, glass effects or decorative
+  animation. Content is grouped with spacing and hairline dividers. A box is
+  used only for a clickable unit or a separate object.
+- **One typeface**, Schibsted Grotesk, on a fixed size scale. Tool screens
+  never go above 32px.
+- **Honest data.** The map shows how many roles each company has open, not
+  "people applying", because applications happen off-platform and Gigomy
+  cannot know them. Recommendations give a plain reason ("Fits your weekend
+  availability") instead of a fake match percentage.
+- **Signature detail: the metro line.** Every on-site role shows its area
+  with the nearest Milan metro line as a small badge (M1, M2, M3, M5). A
+  badge is left out wherever the nearest station is uncertain.
+- **Copy rules:** no em dashes, "role" on public pages and "listing" on
+  employer and admin pages, buttons that name their action.
 
 ### Colour palette
 
@@ -29,207 +55,154 @@ the accents stand out.
 
 | Colour | Hex | Used for |
 | --- | --- | --- |
-| Orchid | `#A67CBA` | Primary buttons and verified badges only. Always dark text on it, never white. |
-| Gold | `#FFD700` | One highlight per screen: "New", pending (e.g. "In review", the admin queue count) and the logo dot. Never as text on white. |
-| Graphite | `#1D1B2E` | Text, top bar, footer, dark panels |
-| Slate | `#5F6478` | Secondary info, captions, map lines and charts |
-| Mist | `#DCDDE8` | Borders, dividers |
-| Cloud | `#F6F6FA` | Page sections, tags |
+| Orchid | `#A67CBA` | Actions (primary buttons), selection, focus rings and the verified mark. Text on orchid is always graphite: white on orchid is too low in contrast. |
+| Gold | `#FFD700` | Pending and new only: the "New" tag, "In review" and the admin queue count. Never as text on white. |
+| Graphite | `#1D1B2E` | Text, the prototype bar, metro badges, map pins |
+| Slate | `#5F6478` | Secondary text, captions, form field borders |
+| Mist | `#DCDDE8` | Borders and hairline dividers |
+| Cloud | `#F6F6FA` | Second surface: sidebars, table headers, tags, footer |
 | White | `#FFFFFF` | Main background |
 | Error | `#B42318` | Form errors only |
 
 Links are graphite text with an orchid underline, because orchid text on white
-is too faint to read. The colours are CSS variables at the top of `index.html`
-(`--graphite`, `--slate`, `--mist`, `--cloud`, `--orchid`, `--gold`,
-`--error`). No other colours are used anywhere, including the map: form
-inputs use slate borders, and shadows are graphite with transparency.
+is too faint to read. No other colours are used anywhere, including the map.
+Status tags use real states: Live (orchid outline), In review (gold), Draft
+(cloud, slate text). The colours are CSS variables at the top of `index.html`.
 
 ### Navigation
 
-A "Prototype" bar at the top of every page jumps straight to any screen.
-Pages are switched with the URL hash, so every screen has a shareable link:
+The header has Jobs, For employers and About, plus Sign in and Create
+profile. Under 768px the links collapse into a Menu button. The prototype bar
+has a "Jump to" menu for every screen, including Admin. Every screen also has
+its own link:
 
 | Link | Screen |
 | --- | --- |
-| `#home` | Landing page |
-| `#jobs` | Browse jobs |
-| `#jobs/day`, `#jobs/tutoring`, `#jobs/project`, `#jobs/internship`, `#jobs/parttime`, `#jobs/high`, `#jobs/remote` | Browse jobs, pre-filtered to one category |
-| `#job` | Job detail (sample listing) |
+| `#home` | Home |
+| `#jobs` | Roles in Milan |
+| `#jobs/parttime`, `#jobs/day`, `#jobs/tutoring`, `#jobs/project`, `#jobs/internship` | Roles with that type pre-selected |
+| `#jobs/high`, `#jobs/remote` | Roles paying €18/h or more, or remote roles |
+| `#job` | Role detail (sample) |
 | `#signup` | Student sign-up |
-| `#company` | Company dashboard |
-| `#admin` | Admin dashboard |
-| `#about` | About the project and the team |
+| `#company` | Employer dashboard |
+| `#admin` | Admin |
+| `#about` | About and team |
 
 ### 1. Home (`#home`)
 
-- **Hero**: "Internships and part-time work in Milan — in English", with
-  "Create your student profile" and "I'm hiring — post a job" buttons and three
-  promises: verified student profiles, always free for students, and apply directly
-  to employers.
-- **Interactive map of Milan** (inline SVG):
-  - 17 company pins covering 20 on-site and hybrid roles. The 4 remote
-    roles are linked separately.
-  - Each pin shows the company initial, the number of people applying and a
-    mini bar chart of applications over the last 7 days.
-  - Hovering over or focusing a pin opens a tooltip listing each open role
-    with its pay, category, date posted, applicant count and a 7-day sparkline.
-  - Clicking a pin opens the job detail page.
-  - You can drag to pan, use the + / − / reset buttons, double-click to zoom,
-    or click the map once and then scroll to zoom.
-  - A "Open Milan in Google Maps" link sits below the map.
-- **Audience strip**: Bachelor's, Master's and exchange students; small
-  internships; part-time roles; Milan businesses and startups.
-- **Browse by category**: six tiles (Day jobs, Tutoring, Week-long projects,
-  High-paying, Internships, Remote-friendly) showing live counts. Each tile
-  opens the job board pre-filtered.
-- **How it works**: three steps for students (verify, build a profile, browse
-  and reach out) and three for companies (create a profile, post a role, hear
-  from verified students).
-- **Principles**: Student-first, Trust-based, English-friendly and Non-profit.
-- **Latest opportunities**: three featured job cards.
-- **About this project**: a teaser with the semester targets (100 students,
-  10 partner companies, €0 cost to students).
-- **Call to action**: "Your next shift is in English", inviting students and
-  employers to join before launch on 18 December.
-- **Footer**: links to the privacy notice, terms, feedback and contact.
+- **Hero**: "Part-time work and internships in Milan, in English." A working
+  search in one row: role or keyword, area, "No Italian needed" (on by
+  default) and **Search roles**, which opens the role list with the search
+  applied. Under it: "Hiring? Post a role".
+- **Map and newest roles side by side.** The map of Milan has 17 company pins
+  (20 on-site and hybrid roles). Each pin shows how many roles that company
+  has open. Hovering over or focusing a pin lists the roles with pay and
+  schedule, and clicking it opens the role list for that company. You can
+  drag to pan, use the + / − / reset buttons, double-click to zoom, or click
+  the map and then scroll. Next to it: the six newest roles and "See all 24
+  roles".
+- **How it works**: three short steps for students and three for employers.
+- **About the project**: one paragraph (student-run, non-profit, free,
+  launching 18 December) with a link to About.
 
-### 2. Browse jobs (`#jobs`)
+### 2. Roles in Milan (`#jobs`)
 
-- **Search** by role, company or category, filtering as you type.
-- **Category shortcuts**: the same six tiles as on the home page.
-- **Filters** (the panel stays visible on wide screens):
-  - Category: Day jobs, Tutoring, Week-long projects, Internships, Part-time,
-    each with a count.
-  - Minimum pay slider from €0 to €30+/h. Day rates, project fees and monthly
-    pay are converted to an hourly estimate so they can be compared.
-  - When: Weekdays, Evenings, Weekends, Flexible.
-  - Work mode: On-site, Hybrid, Remote.
-  - Language: "No Italian required".
-  - Sort: Best match, Highest pay, Newest.
-  - A Reset button clears everything.
-- **Browse view** (the default):
-  - "Recommended for you": the top six matches, each with a match score and a
-    reason such as "Fits your weekend availability", based on a sample profile
-    (weekends, evenings, English).
-  - One horizontal row per category (Day jobs, Tutoring, Week-long projects,
-    High-paying at €18/h or more, Internships, Remote-friendly), each with a
-    "See all" button.
-- **Results view**: shown once you search or pick a category. It has a title,
-  a result count, chips for the active filters, a "Clear all" button, an empty
-  state and "Back to browsing".
-- **Job cards** show the company initial, title, a verified-employer shield,
-  category, duration, area, a "Basic Italian" tag where Italian is needed, pay
-  and schedule. Jobs posted today get a gold "New" tag.
+- **Toolbar**: search by role or company, the result count and a sort menu
+  (Best match, Highest pay, Newest).
+- **Filters** in a sidebar: Type (Part-time, Day job, Tutoring, Short
+  project, Internship, with counts), Minimum pay (a slider; day, project and
+  monthly pay are converted to an hourly estimate), When, Work mode and
+  Language. Under 900px the sidebar becomes a **Filters (n)** button that
+  opens a drawer with a live "Show 12 roles" button. The drawer keeps
+  keyboard focus inside and closes on Escape.
+- **Active filters** appear as removable chips with "Clear all".
+- **One list of roles**: title, company and verified mark, then type · area
+  with metro badge · schedule, and on the right the pay and how long ago it
+  was posted. "New" and "Basic Italian" are the only tags. With Best match,
+  the top three rows give a one-line reason.
+- **Empty state**: says which filter excludes the most roles and offers to
+  remove it.
 
-### 3. Job detail (`#job`)
+### 3. Role detail (`#job`)
 
-A sample listing: **Weekend barista at Nebbia Coffee Bar**.
+A sample role: **Weekend barista at Nebbia Coffee Bar**.
 
-- Tags (a gold "New", Part-time, English only), a verified-employer badge, and the key facts:
-  pay €11/h, Sat & Sun 8:00–14:00, Porta Venezia, starting in November.
-- Sections: About the role, What you'll do, Good to know. "Good to know" says
-  that the contract and pay are agreed directly with the employer.
-- **How to apply** panel: "Apply on employer's site", "Email the employer" and
-  "Save for later". Applications go to the employer, not through the platform.
-- An employer card ("Employer reviewed by the Gigomy team") linking to the
-  company profile, and a **Report this listing** link.
+- Title, company with verified mark, and tags (New, Part-time, No Italian
+  needed).
+- Key facts in one row: pay (€11 per hour), schedule (Sat and Sun, 8:00 to
+  14:00), location (Porta Venezia, M1) and start (November). Two by two on
+  phones.
+- About the role, What you'll do, Good to know.
+- A side panel: **Apply on company site**, Email employer, Save, the note
+  "Applications go straight to the employer", the employer (reviewed by the
+  Gigomy team) with a link to the company, and "Report this role".
 
 ### 4. Student sign-up (`#signup`)
 
-A three-step progress bar (Verify student email → Build your profile → Start
-browsing), shown at step 2.
+"Step 2 of 3: Build your profile" with a three-part progress bar.
 
-1. **Student email**: shows a verified student address. Only verified student
-   addresses can join, confirmed with a 6-digit code, and the student email
-   is never shown to employers.
-2. **About you**: full name, contact email shown to employers, programme, year
-   of study (1st to 3rd year, Master's, Exchange student), languages with level
-   and an "Add language" button, availability (Weekends, Evenings, Weekday
-   mornings, Remote), a short intro, and an optional CV upload (PDF up to 5 MB).
-3. **Privacy**: a required consent to the privacy notice, an optional email
-   alert for matching roles, and a note that you can download or delete your
-   data at any time.
+- **Student email**: a verified address. Only verified student addresses can
+  join (confirmed with a 6-digit code), and employers never see it.
+- **About you**: name, contact email shown to employers, programme, year of
+  study, languages as removable tags with "Add language", availability
+  checkboxes, a short intro and an optional CV (PDF up to 5 MB).
+- **Privacy**: required consent to the privacy notice, optional email
+  alerts, and a note that you can download or delete your data.
+- **What employers see**: a preview card of the profile (name, programme,
+  verified student, languages, availability, CV).
 
-There are "Save draft" and "Finish and browse jobs" buttons. A side panel
-previews **what employers see**: name, programme, a verified-student badge,
-languages, availability and CV status. The profile is visible only to reviewed
-employers, never publicly.
+### 5. Employer dashboard (`#company`)
 
-### 5. Company dashboard (`#company`)
+Shown as the sample employer **Nebbia Coffee Bar** (reviewed employer).
 
-Shown as the sample employer **Nebbia Coffee Bar**.
+- **Your listings**: a table with type, status (Live, In review, Draft) and
+  last update.
+- **Post a role**: title, type of work, location, pay, schedule, language
+  requirement, description, and how students should apply (link or email).
+  **Submit for review** changes to "Submitted, in review". Gigomy doesn't
+  handle applications, contracts or payments.
+- A one-line link to give feedback after hiring a student.
 
-- **Company profile** card with a "Reviewed employer" badge, sector,
-  neighbourhood, website, description and "Edit profile".
-- **Post an opportunity** form:
-  - Role title, type of work (Part-time, Day job, Tutoring, Week-long project,
-    Internship), location, pay and schedule.
-  - Language requirement: English only, or English + basic Italian.
-  - A description.
-  - How students should apply: a link to the company's application page or by
-    email. A note says the platform doesn't handle applications, contracts or
-    payments.
-  - "Preview" and "Submit for review". Submitting switches the button to
-    "Submitted — in review", and listings are reviewed within one working day.
-- **Your listings**, with status chips: Live, In review and Draft.
-- A **Help us improve** feedback prompt.
+### 6. Admin (`#admin`)
 
-### 6. Admin dashboard (`#admin`)
-
-- A side navigation with Overview, Review queue (with a live count), Students,
+- A sidebar with Overview, Review queue (with a gold count), Students,
   Companies, Reports and Feedback.
-- **Progress against the semester goal**: 64 / 100 verified students, 7 / 10
-  reviewed companies and 18 live listings (with apply clicks tracked per
-  listing).
-- A **review queue** that works: Approve or Reject removes the item and updates
-  the counts, with an "All caught up" state when it's empty. It holds sample
-  items of each kind: a listing, a company registration, and a student who
-  signed up with an unrecognised student email and needs a manual check.
-- **Reported listings** (for example "Pay unclear" or "Italian required") and
-  **latest feedback** from students and employers.
+- **Goal progress**: 64 / 100 verified students, 7 / 10 reviewed companies
+  and 18 live listings.
+- **Review queue** as a table (type, item, details, submitted). Approve and
+  Reject work: the row disappears, the counts update, and "All caught up"
+  shows when it is empty.
+- **Reported listings** and **Latest feedback**.
 
-### 7. About and team (`#about`)
+### 7. About (`#about`)
 
-- **Mission**: making the job market in Milan more accessible for
-  English-speaking international students.
-- **Our motives**: the language barrier, scattered opportunities, small
-  businesses that can't reach students, and learning by building.
-- **Four principles**: Student-first, Trust-based, Discovery only and
-  Non-profit.
-- A **prototype disclaimer**: everything is simulated, nothing is connected,
-  no personal data is collected, and Gigomy is an independent student
-  initiative.
-- **Meet the team**: member cards with initials avatars and a member count.
+Why Gigomy exists (the language barrier, scattered roles, small businesses
+that can't reach students, learning by building), the four principles
+(Student-first, Trust-based, Discovery only, Non-profit), a short prototype
+note, and the team.
 
 ### Sample data
 
 | | |
 | --- | --- |
-| Listings | 24: 5 day jobs, 5 tutoring, 5 week-long projects, 4 internships, 5 part-time |
+| Roles | 24: 5 part-time, 5 day jobs, 5 tutoring, 5 short projects, 4 internships |
 | Companies | 19 fictional employers (cafés, startups, studios, families) |
 | Work mode | 13 on-site, 7 hybrid, 4 remote |
-| Language | 22 English only, 2 English + basic Italian |
-| Pay | €9.50 to €30 per hour (estimated); 6 roles are "high-paying" (€18/h or more) |
-| Applicants | 611 simulated applicants across all listings |
+| Language | 22 with no Italian needed, 2 with basic Italian |
+| Pay | €9.50 to €30 per hour (estimated); 6 roles pay €18/h or more |
+| Metro | M1, M2, M3 and M5 badges; none for Ortica, where the nearest station is unclear |
 
-### What is interactive and what is a mock-up
+### What works and what is a mock-up
 
-**Works in the prototype:** page navigation and deep links, the map (pan,
-zoom, pins, tooltips), category counts, search, all filters and sorting,
-recommendations, the category rows and results view, the admin approve/reject
-queue, the "Submit for review" button, and scroll animations (which respect
-the reduced-motion setting).
+**Works:** navigation and links to every screen, the header menu on phones,
+search from Home, the map (pan, zoom, tooltips, company filter), all filters,
+sorting, removable filter chips, the empty state, the mobile filter drawer,
+removing language tags, the admin queue and "Submit for review".
 
-**Visual only, not wired up yet:**
-
-- Every job card and map pin opens the same barista listing.
-- Apply, email, save, report, sign in, CV upload, add language, save draft,
-  preview and edit buttons do nothing.
-- Sign-up form fields aren't saved, and email verification is shown as already
-  complete.
-- The admin sections other than Overview have no content of their own.
-- Footer links (privacy notice, terms, feedback, contact) go back to the home
-  page.
+**Mock-up only:** every role opens the same barista page; apply, email, save,
+report, sign in, CV upload, add language, save draft, preview and edit do
+nothing; sign-up fields aren't saved and verification is shown as done; admin
+sections other than Overview have no content; footer links go back to Home.
 
 ### Editing the prototype
 
@@ -237,17 +210,16 @@ All the content lives in the `<script>` at the bottom of `index.html`:
 
 | What | Where in the script |
 | --- | --- |
-| Job listings | `JOBS` array (title, company, category, area, mode, schedule, pay, hourly `rate`, match score) |
-| High-paying threshold | `HIGH_PAY` (currently €18/h) |
-| Applicant counts per listing | `APPL` |
+| Roles | `JOBS` (title, company, type, area, `metro`, work mode, schedule, pay, hourly `rate`, match score) |
 | Map pin positions per company | `POS` (a company not listed here is counted as remote) |
 | Admin review queue | `queue` |
 | Team members | `TEAM` |
+| "High-paying" threshold for `#jobs/high` | `HIGH_PAY` (currently €18/h) |
 
-Colours (see [Colour palette](#colour-palette)) and fonts are CSS variables in
-`:root` at the top of the file. The map
-is a large inline SVG (around 430 KB) inside `#map-stage`, which makes up most
-of the file size.
+`APPL` (simulated applicant counts) is kept in the data but deliberately not
+shown. The stylesheet is in one block at the top: tokens, then base, layout,
+components and pages. The map is a large inline SVG (around 430 KB) inside
+`#map-stage`, which makes up most of the file size.
 
 ## Semester goal
 
